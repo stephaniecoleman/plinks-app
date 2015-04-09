@@ -3,8 +3,6 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.0'
-# Use postgresql as the database for Active Record
-gem 'pg'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -29,8 +27,26 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Unicorn as the app server
 # gem 'unicorn'
 
+# Use Figaro to setting environment variables
+gem 'figaro'
+
+# Draper for adds an object-oriented layer of presentation logic. Helps us keep logic out of the views!
+gem 'draper', '~> 1.3'
+
+# Use Omniauth and Omniauth-twitter to authenticate users through Twitter
+gem 'omniauth'
+gem 'omniauth-twitter'
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+group :production do
+	# Use postgresql as the database for Active Record
+	gem 'pg'
+	# Use rails_12factor to serve static assets such as images and stylesheets in Heroku
+	gem 'rails_12factor'
+end
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -41,5 +57,7 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  gem 'pry'
 end
 

@@ -1,9 +1,9 @@
 class SessionsController < ApplicationController
 
 	def create
-		user = User.find_by_uid(auth_hash[:info][:uid]) || User.create_with_auth_hash(auth_hash)
-		session[:user_id] = user.id
-		current_user = user
+		@user = User.find_by_uid(auth_hash[:info][:uid]) || User.create_with_auth_hash(auth_hash)
+		session[:user_id] = @user.id
+		current_user = @user
 		redirect_to root_path, :notice => "Signed in!"
 	end
 

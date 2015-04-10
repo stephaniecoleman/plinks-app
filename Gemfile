@@ -30,7 +30,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Figaro to setting environment variables
 gem 'figaro'
 
-# Draper for adds an object-oriented layer of presentation logic. Helps us keep logic out of the views!
+# Draper adds an object-oriented layer of presentation logic. Helps us keep logic out of the views!
 gem 'draper', '~> 1.3'
 
 # Use Omniauth and Omniauth-twitter to authenticate users through Twitter

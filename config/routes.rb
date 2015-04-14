@@ -5,9 +5,10 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'home#index'
 
-  get '/auth/twitter', as: 'twitter_login'
+  get '/auth/twitter', as: :twitter_login
   get '/auth/twitter/callback' => 'sessions#create'
-  delete 'logout' => 'sessions#destroy', as: 'logout'
+  delete 'logout' => 'sessions#destroy', as: :logout
+  get 'search' => 'search#index', as: :search
 
   resources :sessions, only: [:create, :destroy]
   resources :users, only: [:create]

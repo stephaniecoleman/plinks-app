@@ -39,7 +39,6 @@ class Timeline
 	  timeline.each do |tweet_obj|
 	    @tweets << tweet_obj
 	  end
-	  binding.pry
 	end
 
 end

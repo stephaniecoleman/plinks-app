@@ -1,9 +1,14 @@
 class SessionsController < ApplicationController
 
 	def create
-		@user = User.find_by_uid(auth_hash[:info][:uid]) || User.create_with_auth_hash(auth_hash)
+		@user = User.find_by_uid(auth_hash[:uid]) || User.create_with_auth_hash(auth_hash)
 		session[:user_id] = @user.id
-		@timeline = Timeline.new(auth_hash)
+		@client = TwitterAuthorizer.connect_twitter_client(auth_hash)
+		binding.pry
+		@client.user(auth_hash[:uid])	
+
+		# @tweets = @tweets.get_tweets
+		PlinkFinder.new(@tweets)
 		current_user = @user
 		redirect_to root_path, :notice => "Signed in!"
 	end

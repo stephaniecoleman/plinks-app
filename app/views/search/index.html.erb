@@ -1,0 +1,10 @@
+<br>
+ARTIST IS: <%= @artist.name %>
+<br>
+<br>
+SONGS ARE:<br><br>
+<% num = 1 %>
+<% @artist.songs.each do |song| %>
+	<%= num %>. <%= song.values[0] %><br>
+	<% num += 1 %>
+<% end %>

@@ -3,8 +3,7 @@ class Timeline
 	def initialize(auth_hash)
 		@auth_hash = auth_hash
 		@tweets = []
-		@client = self.make_twitter_client
-		self.get_tweets
+		@client = self.connect_twitter_client
 	end
 
 	def get_key_and_secret
@@ -21,17 +20,18 @@ class Timeline
 		end
 	end
 
-	def make_twitter_client
+	def connect_twitter_client
 		get_key_and_secret
 		configure_twitter_client
 	end
 
 	def get_tweets
 		# timeline = @client.user_timeline(:count => 199)
-		timeline = @client.user_timeline(screen_name: "anaismitchell", count: 199,include_rts: false)
+		timeline = @client.user_timeline(screen_name: "anaismitchell", count: 199, include_rts: false)
 		last_id = timeline.last.id - 1
 
-	  4.times do
+		1.times do
+	  # 4.times do
 	    sleep(1)
 	    timeline = timeline + @client.user_timeline(screen_name: "anaismitchell", count: 199, include_rts: false, max_id: last_id)
 	    last_id = timeline.last.id - 1
@@ -39,6 +39,7 @@ class Timeline
 	  timeline.each do |tweet_obj|
 	    @tweets << tweet_obj
 	  end
+	  @tweets
 	end
 
 end

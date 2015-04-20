@@ -8,9 +8,16 @@
 </head>
 <body>
 
-<%= render 'shared/logged_in_or_out' %>
-
-<%= yield %>
+<div class="container">
+  <%= render 'shared/logged_in_or_out' %>
+  <br>
+  <%= render 'shared/search' %>
+	<br>
+  <% flash.each do |key, value| %>
+    <div class="alert alert-<%= key %>"><%= value %></div>
+  <% end %>
+	<%= yield %>
+</div>
 
 </body>
 </html>

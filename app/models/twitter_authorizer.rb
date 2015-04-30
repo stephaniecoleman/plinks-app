@@ -14,8 +14,8 @@ class TwitterAuthorizer
 		end
 	end
 
-	def self.make_twitter_client(auth_hash)
-		self.get_ke_and_secret(auth_hash)
+	def self.connect_twitter_client(auth_hash)
+		self.get_key_and_secret(auth_hash)
 		self.configure_twitter_client
 	end
 

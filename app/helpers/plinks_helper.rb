@@ -1,0 +1,2 @@
+module PlinksHelper
+end

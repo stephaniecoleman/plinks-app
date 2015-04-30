@@ -1,4 +1,5 @@
 class PlinkFinder
+	attr_accessor :plinks
 
 	def initialize(tweet_array)
 		@tweet_array = tweet_array

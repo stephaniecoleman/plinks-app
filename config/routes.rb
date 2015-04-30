@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :followings
+
   resources :musicians
 
   resources :plinks

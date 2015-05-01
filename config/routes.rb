@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   resources :followings
 
   resources :musicians
-
   resources :plinks
 
   # The priority is based upon order of creation: first created -> highest priority.

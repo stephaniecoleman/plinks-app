@@ -36,10 +36,10 @@ ActiveRecord::Schema.define(version: 20150430154055) do
 
   create_table "plinks", force: :cascade do |t|
     t.string   "text"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
     t.integer  "plink_author_id"
-    t.integer  "plink_receiver_id"
+    t.integer  "plink_recipient_id"
   end
 
   create_table "users", force: :cascade do |t|

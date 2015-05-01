@@ -1,4 +1,5 @@
 class TwitterAuthorizer
+# save token secret expire
 
 	def self.get_key_and_secret(auth_hash)
 		@oauth_token = auth_hash[:extra][:access_token].params[:oauth_token]
